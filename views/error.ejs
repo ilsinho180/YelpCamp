@@ -1,0 +1,19 @@
+<% layout("layouts/boilerplate.ejs") %>
+
+    <div class="row">
+        <div class="col-6 offset-3">
+            <div class="alert alert-danger" role="alert">
+                <h4 class="alert-heading">
+                    <%= err.name %>
+                </h4>
+                <p>
+                    <%= err.message %>
+                </p>
+                <p>
+                   <%  if (process.env.Node_Env !== "production") { %>
+                    <%= err.stack  %>
+                    <% } %>
+                </p>
+            </div>
+        </div>
+    </div>
